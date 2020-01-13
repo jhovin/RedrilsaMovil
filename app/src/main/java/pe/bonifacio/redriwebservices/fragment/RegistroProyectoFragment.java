@@ -1,13 +1,19 @@
 package pe.bonifacio.redriwebservices.fragment;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +22,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import static android.Manifest.permission.CAMERA;
 import static android.app.Activity.RESULT_OK;
 
 import java.io.ByteArrayOutputStream;
@@ -37,6 +45,7 @@ public class RegistroProyectoFragment extends Fragment {
 
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private static final int REQUEST_CAMERA = 100;
+    String CAMERA_PERMISSION = android.Manifest.permission.CAMERA;
 
     private ImageView imagenPreview;
 
@@ -60,7 +69,14 @@ public class RegistroProyectoFragment extends Fragment {
         imagenPreview = (ImageView) v.findViewById(R.id.imagen_preview);
         nombreInput = (EditText)v.findViewById(R.id.nombre_input);
         registrarProyecto=(Button)v.findViewById(R.id.btn_registrar_proyectos);
+        tomarFoto=(Button) v.findViewById(R.id.btn_takePicture);
 
+        tomarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                camara();
+            }
+        });
         registrarProyecto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +85,71 @@ public class RegistroProyectoFragment extends Fragment {
         });
         return v;
     }
+    ///////////// Escaner codigo QR /////////////
+    private void camara(){
+        //////camara
+        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        if (currentapiVersion >= android.os.Build.VERSION_CODES.M) {
+            if (checkPermission()) {
+                Toast.makeText(getContext(), "Permiso ya otorgado", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, REQUEST_CAMERA);
+            } else {
+                requestPermission();
+            }
+        }
+    }
+
+    private boolean checkPermission() {
+        return ( ContextCompat.checkSelfPermission(getContext(), CAMERA ) == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(getActivity(), new String[]{CAMERA}, REQUEST_CAMERA);
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CAMERA:
+                if (grantResults.length > 0) {
+
+                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    if (cameraAccepted){
+                        Toast.makeText(getContext(), "Permiso concedido, ahora puedes acceder a la cámara", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(intent, REQUEST_CAMERA);
+                    }else {
+                        Toast.makeText(getContext(), "Permiso denegado, no puede acceder y cámara", Toast.LENGTH_LONG).show();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (shouldShowRequestPermissionRationale(CAMERA)) {
+                                showMessageOKCancel("Debe acceder a los permisos",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                                    requestPermissions(new String[]{CAMERA},
+                                                            REQUEST_CAMERA);
+                                                }
+                                            }
+                                        });
+                                return;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new android.support.v7.app.AlertDialog.Builder(getContext())
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancelar", null)
+                .create()
+                .show();
+    }
+
     private Bitmap bitmap;
 
     @Override

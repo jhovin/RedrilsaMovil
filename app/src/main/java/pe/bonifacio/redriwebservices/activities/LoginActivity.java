@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }else{
                     ApiError error = ApiServiceGenerator.parseError(response);
-                    Toast.makeText(LoginActivity.this, "onError:" + error.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "" + error.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
             @Override

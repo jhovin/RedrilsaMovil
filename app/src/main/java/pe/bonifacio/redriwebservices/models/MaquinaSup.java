@@ -3,14 +3,16 @@ package pe.bonifacio.redriwebservices.models;
 public class MaquinaSup {
     private Long id_sup;
     private String nombre_sup;
+    private String observacion;
     private Long proyecto_id;
 
     public MaquinaSup() {
     }
 
-    public MaquinaSup(Long id_sup, String nombre_sup, Long proyecto_id) {
+    public MaquinaSup(Long id_sup, String nombre_sup, String observacion, Long proyecto_id) {
         this.id_sup = id_sup;
         this.nombre_sup = nombre_sup;
+        this.observacion = observacion;
         this.proyecto_id = proyecto_id;
     }
 
@@ -40,9 +42,10 @@ public class MaquinaSup {
 
     @Override
     public String toString() {
-        return "SuperiorMina{" +
+        return "MaquinaSup{" +
                 "id_sup=" + id_sup +
                 ", nombre_sup='" + nombre_sup + '\'' +
+                ", observacion='" + observacion + '\'' +
                 ", proyecto_id=" + proyecto_id +
                 '}';
     }

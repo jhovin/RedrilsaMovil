@@ -47,12 +47,12 @@ public class ListaTodasFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_lista_todas, container, false);
 
-        todosproyectosList = v.findViewById(R.id.recyclerview_lista_mascotas_todas);
+        todosproyectosList = v.findViewById(R.id.recyclerview_lista_proyectos_todas);
         todosproyectosList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         todosproyectosList.setAdapter(new ProyectosAdapter());
 
-        swipeRefreshLayout=v.findViewById(R.id.swiperefresh_lista_mascotas_todas);
+        swipeRefreshLayout=v.findViewById(R.id.swiperefresh_lista_proyectos_todas);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -80,13 +80,13 @@ public class ListaTodasFragment extends Fragment {
                         ProyectosAdapter adapter=(ProyectosAdapter)todosproyectosList.getAdapter();
                         adapter.setProyectos(proyectos);
                         adapter.notifyDataSetChanged();
-                        Toast.makeText(getContext(), "Lista de Mascotas", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Lista de Proyectos", Toast.LENGTH_LONG).show();
                     }else{
                         throw new Exception(ApiServiceGenerator.parseError(response).getMessage());
                     }
                 }catch (Throwable t){
                     Log.e(TAG, "onThrowable: " + t.getMessage(), t);
-                    Toast.makeText(getContext(), "Error en el Servidor al listar las mascotas", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Error en el Servidor al listar las proyectos", Toast.LENGTH_LONG).show();
                 } finally {
                     swipeRefreshLayout.setRefreshing(false);
                 }

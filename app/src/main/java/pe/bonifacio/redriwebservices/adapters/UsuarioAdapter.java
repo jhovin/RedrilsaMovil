@@ -31,12 +31,13 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
 
         ImageView fotoImage;
         TextView nombreText;
-        TextView Text;
-        TextView edadText;
+
+
 
         ViewHolder(View itemView) {
             super(itemView);
-
+            nombreText=itemView.findViewById(R.id.nombre_text);
+            fotoImage=itemView.findViewById(R.id.foto_image);
         }
     }
     @NonNull

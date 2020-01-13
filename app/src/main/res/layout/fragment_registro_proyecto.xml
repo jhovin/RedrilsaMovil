@@ -34,8 +34,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@android:drawable/ic_menu_camera"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:text="Tomar Foto"
-            android:onClick="takePicture"/>
+            android:text="Tomar Foto" />
 
         <ImageView
             android:id="@+id/imagen_preview"

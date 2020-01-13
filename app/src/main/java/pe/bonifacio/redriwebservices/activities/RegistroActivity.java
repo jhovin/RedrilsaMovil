@@ -19,11 +19,12 @@ import retrofit2.Response;
 public class RegistroActivity extends AppCompatActivity {
 
     private static final String TAG = RegistroActivity.class.getSimpleName();
+
+    private EditText dniUsuInput;
     private EditText nombreUsuInput;
+    private EditText cargoUsuInput;
     private EditText correoUsuInput;
     private EditText passwordUsuInput;
-    private EditText cargoUsuInput;
-    private EditText dniUsuInput;
     private Button registrarUsu;
 
     @Override
@@ -31,11 +32,11 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        dniUsuInput=(EditText)findViewById(R.id.edit_usu_dni);
         nombreUsuInput =(EditText) findViewById(R.id.edit_usu_nombre);
         correoUsuInput =(EditText) findViewById(R.id.edit_usu_email);
         passwordUsuInput =(EditText) findViewById(R.id.edit_usu_password);
         cargoUsuInput=(EditText)findViewById(R.id.edit_usu_cargo);
-        dniUsuInput=(EditText)findViewById(R.id.edit_usu_dni);
         registrarUsu=(Button) findViewById(R.id.btn_usu_registro);
 
         registrarUsu.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +63,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
         Call<Usuario> call;
-        call = service.createUsuario(nombre, correo, dni,cargo,password);
+        call = service.createUsuario(dni,nombre,cargo,correo,password);
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {

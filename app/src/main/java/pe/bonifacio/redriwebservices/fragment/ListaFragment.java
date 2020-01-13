@@ -54,12 +54,12 @@ public class ListaFragment extends Fragment {
             }
         });
 
-        proyectosList = v.findViewById(R.id.recyclerview_lista_mascotas);
+        proyectosList = v.findViewById(R.id.recyclerview_lista_proyectos);
         proyectosList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         proyectosList.setAdapter(new ProyectosAdapter());
 
-        swipeRefreshLayout=v.findViewById(R.id.swiperefresh_lista_mascotas);
+        swipeRefreshLayout=v.findViewById(R.id.swiperefresh_lista_proyectos);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

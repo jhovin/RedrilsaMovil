@@ -25,7 +25,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        tools:text="Daniel Quispe Oscco"/>
+        tools:text="Jhovin Bonifacio Lozano"/>
     <TextView
         android:id="@+id/txt_correo_nav"
         style="@style/Widget.AppCompat.Spinner"

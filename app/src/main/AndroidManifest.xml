@@ -16,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.HomeActivity">
-        </activity>
+        <activity android:name=".activities.MinaActivity"></activity>
+        <activity android:name=".activities.HorometroActivity" />
+        <activity android:name=".activities.HomeActivity" />
         <activity android:name=".activities.RegistroActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.SplashActivity">
@@ -27,8 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ListaInteriorActivity" />
-        <activity android:name=".activities.ListaSuperiorActivity" />
         <activity android:name=".activities.SelectorActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.MainActivity" />

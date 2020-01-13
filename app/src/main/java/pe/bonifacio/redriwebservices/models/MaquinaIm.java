@@ -3,14 +3,16 @@ package pe.bonifacio.redriwebservices.models;
 public class MaquinaIm {
     private Long id_im;
     private String nombre_im;
+    private String observacion;
     private Long proyecto_id;
 
     public MaquinaIm() {
     }
 
-    public MaquinaIm(Long id_im, String nombre_im, Long proyecto_id) {
+    public MaquinaIm(Long id_im, String nombre_im, String observacion, Long proyecto_id) {
         this.id_im = id_im;
         this.nombre_im = nombre_im;
+        this.observacion = observacion;
         this.proyecto_id = proyecto_id;
     }
 
@@ -30,6 +32,14 @@ public class MaquinaIm {
         this.nombre_im = nombre_im;
     }
 
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
     public Long getProyecto_id() {
         return proyecto_id;
     }
@@ -38,11 +48,13 @@ public class MaquinaIm {
         this.proyecto_id = proyecto_id;
     }
 
+
     @Override
     public String toString() {
-        return "InteriorMina{" +
+        return "MaquinaIm{" +
                 "id_im=" + id_im +
                 ", nombre_im='" + nombre_im + '\'' +
+                ", observacion='" + observacion + '\'' +
                 ", proyecto_id=" + proyecto_id +
                 '}';
     }

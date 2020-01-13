@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardUseCompatPadding="true">
 
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:background="#000000"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/nombre_mina_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/foto_image"
+            android:layout_toStartOf="@+id/menu_button"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Nombre de la Máquina Interior Mina"/>
+
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/ic_menu_dots"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:background="@null"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

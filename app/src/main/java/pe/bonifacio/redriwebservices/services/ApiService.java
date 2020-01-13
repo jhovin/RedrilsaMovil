@@ -4,6 +4,8 @@ import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import pe.bonifacio.redriwebservices.models.MaquinaIm;
+import pe.bonifacio.redriwebservices.models.MaquinaSup;
 import pe.bonifacio.redriwebservices.models.Proyecto;
 import pe.bonifacio.redriwebservices.models.Usuario;
 import retrofit2.Call;
@@ -53,5 +55,29 @@ public interface ApiService {
                                 @Field("cargo") String cargo,
                                 @Field("correo") String correo,
                                 @Field("password") String password);
+
+
+    @GET("/maquinas/superficie")
+    Call<List<MaquinaSup>> getMaquinasSup();
+
+    @GET("//maquinas/superficie/{id}")
+    Call<MaquinaSup> showMaquinasSup(@Path("id") Long id);
+
+    @FormUrlEncoded
+    @POST("//maquinas/superficie")
+    Call<MaquinaSup> createMaquinasSup(@Field("nombre_sup") String nombre_sup,
+                                @Field("observacion") String observacion);
+
+
+    @GET("/maquinas/mina")
+    Call<List<MaquinaIm>> getMaquinasIm();
+
+    @GET("//maquinas/mina/{id}")
+    Call<MaquinaIm> showMaquinasIm(@Path("id") Long id);
+
+    @FormUrlEncoded
+    @POST("//maquinas/mina")
+    Call<MaquinaIm> createMaquinasIm(@Field("nombre_im") String nombre_im,
+                                       @Field("observacion") String observacion);
 
 }

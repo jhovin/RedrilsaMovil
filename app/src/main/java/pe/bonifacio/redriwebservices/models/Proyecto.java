@@ -8,8 +8,8 @@ public class Proyecto{
     private Long id;
     private String nombre;
     private String imagen;
-    private List<MaquinaIm> maquinaims = new ArrayList<>();
-    private List<MaquinaSup> maquinasups = new ArrayList<>();
+    private List<MaquinaIm> maquinaim = new ArrayList<>();
+    private List<MaquinaSup> maquinasup = new ArrayList<>();
 
     public Proyecto(Long id, String nombre, String imagen) {
         this.id = id;
@@ -41,20 +41,20 @@ public class Proyecto{
         this.imagen = imagen;
     }
 
-    public List<MaquinaIm> getMaquinaims() {
-        return maquinaims;
+    public List<MaquinaIm> getMaquinaim() {
+        return maquinaim;
     }
 
-    public void setMaquinaims(List<MaquinaIm> maquinaims) {
-        this.maquinaims = maquinaims;
+    public void setMaquinaim(List<MaquinaIm> maquinaim) {
+        this.maquinaim = maquinaim;
     }
 
-    public List<MaquinaSup> getMaquinasups() {
-        return maquinasups;
+    public List<MaquinaSup> getMaquinasup() {
+        return maquinasup;
     }
 
-    public void setMaquinasups(List<MaquinaSup> maquinasups) {
-        this.maquinasups = maquinasups;
+    public void setMaquinasup(List<MaquinaSup> maquinasup) {
+        this.maquinasup = maquinasup;
     }
 
     @Override
@@ -63,8 +63,8 @@ public class Proyecto{
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", imagen='" + imagen + '\'' +
-                ", maquinaims=" + maquinaims +
-                ", maquinasups=" + maquinasups +
+                ", maquinaim=" + maquinaim +
+                ", maquinasup=" + maquinasup +
                 '}';
     }
 }

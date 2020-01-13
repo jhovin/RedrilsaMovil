@@ -6,11 +6,11 @@
         <item
             android:id="@+id/nav_todos"
             android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Todas las mascotas" />
+            android:title="Todos los proyectos" />
         <item
             android:id="@+id/nav_datos"
             android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Mis mascotas" />
+            android:title="Mis proyectos" />
         <item
             android:id="@+id/nav_qr"
             android:icon="@android:drawable/ic_menu_myplaces"

@@ -51,12 +51,12 @@ public class HomeActivity extends AppCompatActivity {
                 // Do action by menu item id
                 switch (menuItem.getItemId()){
                     case R.id.nav_todos:
-                        showTodasMascotas();
-                        Toast.makeText(HomeActivity.this, "Todas las mascotas", Toast.LENGTH_SHORT).show();
+                        showTodasProyectos();
+                        Toast.makeText(HomeActivity.this, "Todas los proyectos", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_datos:
-                        showMascotas();
-                        Toast.makeText(HomeActivity.this, "Mis mascotas", Toast.LENGTH_SHORT).show();
+                        showProyectos();
+                        Toast.makeText(HomeActivity.this, "Mis proyectos", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_logout:
                         logout();
@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
-        showTodasMascotas();
+        showTodasProyectos();
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
         usuid = sp.getLong("usuid", 0L);
@@ -98,13 +98,13 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    ///////// Todas las Mascotas ///////////
-    private void showTodasMascotas(){
+    ///////// Todas las Proyecyos ///////////
+    private void showTodasProyectos(){
         Fragment fragment = new ListaTodasFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
     }
-    ///////// Mis Mascotas ///////////
-    private void showMascotas(){
+    ///////// Mis Proyectos ///////////
+    private void showProyectos(){
         Fragment fragment = new ListaFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
     }
