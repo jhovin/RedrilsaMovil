@@ -16,11 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-<<<<<<< HEAD
-=======
         <activity android:name=".HorometroFrimanActivity">
         </activity>
->>>>>>> origin/master
         <activity android:name=".activities.MinaActivity" />
         <activity android:name=".activities.HorometroActivity" />
         <activity android:name=".activities.HomeActivity" />
