@@ -151,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/shape"
+                    android:background="@drawable/shape4"
                     android:elevation="5dp"
                     android:text="CREAR CUENTA"
                     android:textColor="#ffffff"

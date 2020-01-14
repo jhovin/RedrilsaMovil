@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:background="@drawable/shape"
+                android:background="@drawable/shape4"
                 android:elevation="5dp"
                 android:textColor="#FFFFFF"
                 android:text="Iniciar Sesion" />
