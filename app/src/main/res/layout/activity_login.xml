@@ -136,12 +136,15 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
+       android:layout_margin="20dp"
+       android:gravity="center_horizontal"
        android:weightSum="3">
 
        <ImageView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:onClick="irYoutube"
+           android:layout_margin="10dp"
            android:background="@drawable/ic_youtube">
 
        </ImageView>
@@ -149,14 +152,16 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:onClick="irFacebook"
+           android:layout_margin="10dp"
            android:background="@drawable/ic_facebook">
        </ImageView>
 
        <ImageView
-           android:layout_width="50dp"
-           android:layout_height="50dp"
+           android:layout_width="65dp"
+           android:layout_height="65dp"
+           android:layout_margin="10dp"
            android:onClick="irRedrilsa"
-           android:background="@drawable/redrilsa"></ImageView>
+           android:src="@drawable/redrilsa"></ImageView>
 
 
    </LinearLayout>
