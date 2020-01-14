@@ -48,8 +48,12 @@ public class RegistroProyectoFragment extends Fragment {
     String CAMERA_PERMISSION = android.Manifest.permission.CAMERA;
 
     private ImageView imagenPreview;
-
+    private EditText clienteInput;
     private EditText nombreInput;
+    private EditText distritoInput;
+    private EditText provinciaInput;
+    private EditText departamentoInput;
+    private EditText gerenteInput,telefonoInput;
 
     private Button tomarFoto,registrarProyecto;
 
@@ -68,6 +72,12 @@ public class RegistroProyectoFragment extends Fragment {
 
         imagenPreview = (ImageView) v.findViewById(R.id.imagen_preview);
         nombreInput = (EditText)v.findViewById(R.id.nombre_input);
+        clienteInput=(EditText)v.findViewById(R.id.cliente_input);
+        distritoInput=(EditText)v.findViewById(R.id.distrito_input);
+        provinciaInput=(EditText)v.findViewById(R.id.provincia_input);
+        departamentoInput=(EditText)v.findViewById(R.id.departamento_input);
+        gerenteInput=(EditText)v.findViewById(R.id.gerente_input);
+        telefonoInput=(EditText)v.findViewById(R.id.telefono_input);
         registrarProyecto=(Button)v.findViewById(R.id.btn_registrar_proyectos);
         tomarFoto=(Button) v.findViewById(R.id.btn_takePicture);
 
@@ -163,12 +173,16 @@ public class RegistroProyectoFragment extends Fragment {
         }
     }
     public void callRegister(){
-
         String nombre = nombreInput.getText().toString().toUpperCase();
+        String cliente=clienteInput.getText().toString().toUpperCase();
+        String distrito=distritoInput.getText().toString().toUpperCase();
+        String provincia=provinciaInput.getText().toString().toUpperCase();
+        String departamento=departamentoInput.getText().toString().toUpperCase();
+        String gerente=gerenteInput.getText().toString().toUpperCase();
+        String telefono=telefonoInput.getText().toString().toUpperCase();
 
-
-        if (nombre.isEmpty()) {
-            Toast.makeText(getContext(), "El nombre del proyecto es un campo requerido", Toast.LENGTH_SHORT).show();
+        if (nombre.isEmpty()||cliente.isEmpty()||distrito.isEmpty()||provincia.isEmpty()) {
+            Toast.makeText(getContext(), "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -177,7 +191,7 @@ public class RegistroProyectoFragment extends Fragment {
         Call<Proyecto> call;
 
         if(bitmap == null){
-            call = service.createProyecto(nombre);
+            call = service.createProyecto(nombre,cliente,distrito,provincia,departamento,gerente,telefono);
         } else {
 
             // De bitmap a ByteArray
@@ -189,15 +203,21 @@ public class RegistroProyectoFragment extends Fragment {
             RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), byteArray);
             MultipartBody.Part imagenPart = MultipartBody.Part.createFormData("imagen", "photo.jpg", requestFile);
 
-            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-            usuid = sp.getLong("usuid", 0L);
+            SharedPreferences spa = PreferenceManager.getDefaultSharedPreferences(getContext());
+            usuid = spa.getLong("usuid", 0L);
             //usuid = getActivity().getIntent().getExtras().getLong("ID");
             Log.e(TAG, "usuid:" + usuid);
 
             // Paramestros a Part
             RequestBody nombrePart = RequestBody.create(MultipartBody.FORM, nombre);
+            RequestBody clientePart = RequestBody.create(MultipartBody.FORM,cliente);
+            RequestBody distritoPart = RequestBody.create(MultipartBody.FORM,distrito);
+            RequestBody provinciaPart = RequestBody.create(MultipartBody.FORM,provincia);
+            RequestBody departamentoPart = RequestBody.create(MultipartBody.FORM,departamento);
+            RequestBody gerentePart= RequestBody.create(MultipartBody.FORM,gerente);
+            RequestBody telefonoPart = RequestBody.create(MultipartBody.FORM,telefono);
 
-            call = service.createProyecto(nombrePart, imagenPart);
+            call = service.createProyecto(nombrePart,clientePart,distritoPart,provinciaPart,departamentoPart,gerentePart,telefonoPart,imagenPart);
         }
 
         call.enqueue(new Callback<Proyecto>() {

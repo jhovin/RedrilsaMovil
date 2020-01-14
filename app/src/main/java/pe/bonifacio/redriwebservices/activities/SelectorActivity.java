@@ -33,6 +33,9 @@ public class SelectorActivity extends AppCompatActivity {
         Intent intent=new Intent(SelectorActivity.this,MinaActivity.class);
         startActivity(intent);
     }
+    public void superficie(){
+        
+    }
 
 
 

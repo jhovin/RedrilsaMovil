@@ -22,25 +22,6 @@ public interface ApiService {
 
     String API_BASE_URL = "http://10.0.2.2:8088";
 
-    @GET("/proyectos")
-    Call<List<Proyecto>> getProyectos();
-
-    @FormUrlEncoded
-    @POST("/proyectos")
-    Call<Proyecto> createProyecto(@Field("nombre") String nombre);
-    @Multipart
-    @POST("/proyectos")
-    Call<Proyecto> createProyecto(@Part("nombre") RequestBody nombre,
-                                  @Part MultipartBody.Part imagen
-    );
-    @DELETE("/proyectos/{id}")
-    Call<String> destroyProyecto(@Path("id") Long id);
-
-    @FormUrlEncoded
-    @POST("/auth/login")
-    Call<Usuario> login(@Field("correo") String correo,
-                        @Field("password") String password);
-
 
     @GET("/usuarios")
     Call<List<Usuario>> getUsuarios();
@@ -55,6 +36,35 @@ public interface ApiService {
                                 @Field("cargo") String cargo,
                                 @Field("correo") String correo,
                                 @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("/auth/login")
+    Call<Usuario> login(@Field("correo") String correo,
+                        @Field("password") String password);
+
+
+    @GET("/proyectos")
+    Call<List<Proyecto>> getProyectos();
+
+    @FormUrlEncoded
+    @POST("/proyectos")
+    Call<Proyecto> createProyecto(@Field("nombre") String nombre,@Field("cliente")String cliente,
+                                  @Field("distrito") String distrito,@Field("provincia")String provincia,
+                                  @Field("departamento")String departamento,@Field("gerente")String gerente,
+                                  @Field("telefono")String telefono);
+    @Multipart
+    @POST("/proyectos")
+    Call<Proyecto> createProyecto(@Part("nombre") RequestBody nombre,@Part("cliente") RequestBody cliente,
+                                  @Part("distrito") RequestBody distrito,@Part("provincia") RequestBody provincia,
+                                  @Part("departamento")RequestBody departamento,@Part("gerente")RequestBody gerente,
+                                  @Part("telefono")RequestBody telefono,
+                                  @Part MultipartBody.Part imagen
+
+    );
+    @DELETE("/proyectos/{id}")
+    Call<String> destroyProyecto(@Path("id") Long id);
+
+
 
 
     @GET("/maquinas/superficie")

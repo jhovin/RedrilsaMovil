@@ -93,7 +93,7 @@ public class ListaFragment extends Fragment {
                     if (response.isSuccessful()) {
                         Usuario usuario=response.body();
                         Log.d(TAG, "usuarioooooo: " + usuario);
-                        Log.d(TAG, "usuario getNegocio: " + usuario.getProyecto());
+                        Log.d(TAG, "usuario getProyecto: " + usuario.getProyecto());
 
                         ProyectosAdapter adapter = (ProyectosAdapter) proyectosList.getAdapter();
                         adapter.setProyectos(usuario.getProyecto());

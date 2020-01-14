@@ -1,7 +1,9 @@
 package pe.bonifacio.redriwebservices.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ImageView imagenPreview;
 
-    private EditText nombreInput;
+    private EditText nombreInput,clienteInput,distritoInput,provinciaInput,departamentoInput,gerenteInput,telefonoInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         imagenPreview = findViewById(R.id.imagen_preview);
         nombreInput = findViewById(R.id.nombre_input);
+        clienteInput=findViewById(R.id.cliente_input);
+        distritoInput=findViewById(R.id.distrito_input);
+        provinciaInput=findViewById(R.id.provincia_input);
+        departamentoInput=findViewById(R.id.departamento_input);
+        gerenteInput=findViewById(R.id.gerente_input);
+        telefonoInput=findViewById(R.id.telefono_input);
 
     }
     private static final int REQUEST_CAMERA = 100;
@@ -63,12 +71,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void callRegister(View view){
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        final Long usuario_id = sp.getLong("id",0);
 
         String nombre = nombreInput.getText().toString().toUpperCase();
+        String cliente=clienteInput.getText().toString().toUpperCase();
+        String distrito=distritoInput.getText().toString().toUpperCase();
+        String provincia=provinciaInput.getText().toString().toUpperCase();
+        String departamento=departamentoInput.getText().toString().toUpperCase();
+        String gerente=gerenteInput.getText().toString().toUpperCase();
+        String telefono=telefonoInput.getText().toString().toUpperCase();
 
-
-        if (nombre.isEmpty()) {
-            Toast.makeText(this, "El nombre del proyecto es un campo requerido", Toast.LENGTH_SHORT).show();
+        if (nombre.isEmpty()||cliente.isEmpty()||distrito.isEmpty()||provincia.isEmpty()) {
+            Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -77,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
         Call<Proyecto> call;
 
         if(bitmap == null){
-            call = service.createProyecto(nombre);
+            call = service.createProyecto(nombre,cliente,distrito,provincia,departamento,gerente,telefono);
         } else {
 
             // De bitmap a ByteArray
@@ -91,10 +106,14 @@ public class RegisterActivity extends AppCompatActivity {
 
             // Paramestros a Part
             RequestBody nombrePart = RequestBody.create(MultipartBody.FORM, nombre);
+            RequestBody clientePart = RequestBody.create(MultipartBody.FORM, cliente);
+            RequestBody distritoPart = RequestBody.create(MultipartBody.FORM, distrito);
+            RequestBody provinciaPart = RequestBody.create(MultipartBody.FORM, provincia);
+            RequestBody departamentoPart = RequestBody.create(MultipartBody.FORM, departamento);
+            RequestBody gerentePart = RequestBody.create(MultipartBody.FORM, gerente);
+            RequestBody telefonoPart = RequestBody.create(MultipartBody.FORM, telefono);
 
-
-
-            call = service.createProyecto(nombrePart, imagenPart);
+            call = service.createProyecto(nombrePart,clientePart,distritoPart,provinciaPart,departamentoPart,gerentePart,telefonoPart,imagenPart);
         }
 
         call.enqueue(new Callback<Proyecto>() {

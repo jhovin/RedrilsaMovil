@@ -1,5 +1,7 @@
 package pe.bonifacio.redriwebservices.activities;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,6 +39,7 @@ public class MinaActivity extends AppCompatActivity {
 
     }
     public void initialize(){
+
         ApiService service= ApiServiceGenerator.createService(ApiService.class);
 
         service.getMaquinasIm().enqueue(new Callback<List<MaquinaIm>>() {
@@ -48,7 +51,6 @@ public class MinaActivity extends AppCompatActivity {
 
                         List<MaquinaIm> mina =response.body();
                         Log.d(TAG,"mina: "+mina);
-
                         MinaAdapter adapter=(MinaAdapter)minaList.getAdapter();
                         adapter.setMaquinasIM(mina);
                         adapter.notifyDataSetChanged();
