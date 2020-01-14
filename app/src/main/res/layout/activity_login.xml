@@ -1,46 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity"
+    android:orientation="vertical"
     android:padding="16dp">
+
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:src="@drawable/usuario"
         android:layout_margin="16dp"/>
-    <EditText
-        android:id="@+id/edit_email"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/img_logo"
-        android:layout_margin="8dp"
-        android:hint="Ingrese email"/>
-    <EditText
-        android:id="@+id/edit_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_email"
-        android:layout_margin="8dp"
-        android:inputType="textPassword"
-        android:hint="Ingrese Contraseña"/>
-    <Button
-        android:id="@+id/btn_ingresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ingresar"
-        android:background="@color/colorPrimary"
-        android:layout_below="@+id/edit_password"
-        android:layout_margin="8dp"/>
-    <Button
-        android:id="@+id/btn_registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_ingresar"
-        android:background="@color/colorPrimary"
-        android:text="REGISTRARSE"
-        android:layout_margin="8dp"/>
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/shape3"
+            android:padding="32dp">
+
+            <ProgressBar
+                android:id="@+id/progressbarLoginUser"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                tools:visibility="gone"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="250dp"/>
+
+            <TextView
+                android:id="@+id/IniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="Iniciar Sesión"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:drawableStart="@drawable/ic_sobre"
+                    android:drawablePadding="7dp"
+                    android:hint="Ingrese correo electrónico"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                app:passwordToggleEnabled="true"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingrese contraseña"
+                    android:drawableStart="@drawable/ic_bloquear"
+                    android:inputType="textPassword"
+                    android:drawablePadding="7dp"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/btn_ingresar"
+                android:layout_width="300dp"
+                android:textSize="15dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:background="@drawable/shape"
+                android:elevation="5dp"
+                android:textColor="#FFFFFF"
+                android:text="Iniciar Sesion" />
+
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:background="#615454"
+                android:layout_height="2dp">
+
+            </View>
+
+            <TextView
+                android:id="@+id/textViewRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="¿Aún no estás registrado?"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:weightSum="3">
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="irYoutube"
+           android:background="@drawable/ic_youtube">
+
+       </ImageView>
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="irFacebook"
+           android:background="@drawable/ic_facebook">
+       </ImageView>
+
+       <ImageView
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:onClick="irRedrilsa"
+           android:background="@drawable/redrilsa"></ImageView>
+
+
+   </LinearLayout>
+
+</LinearLayout>
