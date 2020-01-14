@@ -2,6 +2,7 @@ package pe.bonifacio.redriwebservices.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import pe.bonifacio.redriwebservices.R;
@@ -24,7 +26,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
     private EditText correoInput,passwordInput;
-    private Button btnIngresarUsu,btnRegistrarUsu;
+    private Button btnIngresarUsu;
+    private TextView tvRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         correoInput = findViewById(R.id.edit_email);
         passwordInput = findViewById(R.id.edit_password);
         btnIngresarUsu=findViewById(R.id.btn_ingresar);
-        btnRegistrarUsu=findViewById(R.id.btn_registrar);
+        tvRegistro=findViewById(R.id.textViewRegistro);
 
         btnIngresarUsu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnRegistrarUsu.setOnClickListener(new View.OnClickListener() {
+        tvRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this, RegistroActivity.class);
@@ -133,5 +136,22 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void irYoutube(View view) {
+        Uri uri = Uri.parse("http://www.youtube.com/channel/UCW2ByWXaaTk5s-dCWPM42Fg/videos");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    public void irFacebook(View view) {
+        Uri uri = Uri.parse("http://www.facebook.com/redrilsa/");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    public void irRedrilsa(View view) {
+        Uri uri = Uri.parse("http://intranet.redrilsa.com.pe/inicio.asp");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
 }
 

@@ -1,5 +1,6 @@
 package pe.bonifacio.redriwebservices.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -97,4 +98,8 @@ public class RegistroActivity extends AppCompatActivity {
 
     }
 
+    public void irLogin(View view) {
+        Intent intent=new Intent(RegistroActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
 }

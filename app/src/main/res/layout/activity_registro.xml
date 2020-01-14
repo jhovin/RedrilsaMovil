@@ -1,59 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#7C7C50"
     tools:context=".activities.RegistroActivity"
     android:padding="20dp">
 
-    <EditText
-        android:id="@+id/edit_usu_dni"
+    <ScrollView
+        android:id="@+id/SV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:inputType="number"
-        android:hint="Ingrese DNI"/>
-    <EditText
-        android:id="@+id/edit_usu_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_usu_dni"
-        android:hint="Nombre y Apellidos"
-        android:inputType="text"
-        android:layout_margin="16dp"/>
-    <EditText
-        android:id="@+id/edit_usu_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_usu_nombre"
-        android:layout_margin="16dp"
-        android:inputType="textEmailAddress"
-        android:hint="Ingrese Correo"/>
-    <EditText
-        android:id="@+id/edit_usu_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_usu_email"
-        android:layout_margin="16dp"
-        android:inputType="textPassword"
-        android:hint="Ingrese Contraseña"/>
-    <EditText
-        android:id="@+id/edit_usu_cargo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_usu_password"
-        android:layout_margin="16dp"
-        android:inputType="text"
-        android:hint="Ingrese Cargo"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_usu_registro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_usu_cargo"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/colorPlata"
-        android:text="Registrar" />
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/shape3"
+            android:orientation="vertical">
+
+            <ImageView
+                android:padding="10dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/usuario" />
+
+            <ProgressBar
+                android:id="@+id/progressbarRegisterUser"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                tools:visibility="gone"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="250dp"/>
+
+            <LinearLayout
+                android:id="@+id/contentRegisterUser"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registro de Usuario"
+                    android:textSize="30dp"
+                    android:layout_marginBottom="20dp">
+
+                </TextView>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_usu_nombre"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:drawableStart="@drawable/ic_usuario"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="Ingrese su nombre completo"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_usu_dni"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/ic_dni_de_periodista"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="Ingrese su DNI"
+                        android:ems="8"
+                        android:maxLength="8"
+                        android:digits="1234567890"
+                        android:inputType="number"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_usu_email"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/ic_sobre"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="Ingrese su correo eléctronico"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_usu_cargo"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:drawableStart="@drawable/ic_ingenieria_inversa"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="Ingrese su cargo en la empresa"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    app:passwordToggleEnabled="true"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edit_usu_password"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/ic_bloquear"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Ingrese una contraseña"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+
+
+                <Button
+                    android:id="@+id/btn_usu_registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape4"
+                    android:elevation="5dp"
+                    android:text="CREAR CUENTA"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:background="#615454"
+                    android:layout_height="2dp">
+
+                </View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Ya tienes cuenta?"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_ir_inicioSesion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:onClick="irLogin"
+                        android:text="Iniciar Sesión"
+                        android:textColor="#000" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
