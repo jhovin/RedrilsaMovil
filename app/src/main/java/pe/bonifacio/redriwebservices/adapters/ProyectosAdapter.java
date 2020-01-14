@@ -49,12 +49,14 @@ public class ProyectosAdapter extends RecyclerView.Adapter<ProyectosAdapter.View
 
         ImageView fotoImage;
         TextView nombreText;
+        TextView distritoText;
         ImageButton menuButton;
 
         ViewHolder(View itemView) {
             super(itemView);
             fotoImage = itemView.findViewById(R.id.foto_image);
             nombreText = itemView.findViewById(R.id.nombre_text);
+            distritoText=itemView.findViewById(R.id.distrito_text);
             menuButton = itemView.findViewById(R.id.menu_button);
         }
     }
@@ -74,6 +76,7 @@ public class ProyectosAdapter extends RecyclerView.Adapter<ProyectosAdapter.View
         final Proyecto proyecto = this.proyectos.get(position);
 
         viewHolder.nombreText.setText(proyecto.getNombre());
+        viewHolder.distritoText.setText(proyecto.getDistrito());
 
         String url = ApiService.API_BASE_URL + "/proyectos/images/" + proyecto.getImagen();
         Picasso.with(context).load(url).into(viewHolder.fotoImage);
@@ -149,9 +152,6 @@ public class ProyectosAdapter extends RecyclerView.Adapter<ProyectosAdapter.View
 
 
     }
-
-
-
 
     @Override
     public int getItemCount() {

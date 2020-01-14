@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.MinaActivity"></activity>
+        <activity android:name=".activities.MinaActivity" />
         <activity android:name=".activities.HorometroActivity" />
         <activity android:name=".activities.HomeActivity" />
         <activity android:name=".activities.RegistroActivity" />

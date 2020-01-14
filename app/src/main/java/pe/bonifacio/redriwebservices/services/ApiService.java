@@ -64,6 +64,8 @@ public interface ApiService {
     @DELETE("/proyectos/{id}")
     Call<String> destroyProyecto(@Path("id") Long id);
 
+    @GET("/proyectos/{id}")
+    Call<Proyecto> showProyecto(@Path("id") Long id);
 
 
 

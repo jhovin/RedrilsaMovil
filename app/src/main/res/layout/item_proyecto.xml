@@ -37,9 +37,22 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/foto_image"
             android:layout_toStartOf="@+id/menu_button"
+            android:layout_marginBottom="8dp"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Nombre del proyecto"/>
+
+        <TextView
+            android:id="@+id/distrito_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/foto_image"
+            android:layout_toStartOf="@+id/menu_button"
+            android:layout_below="@+id/nombre_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="distrito"/>
+
 
 
         <ImageButton
