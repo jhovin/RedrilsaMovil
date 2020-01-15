@@ -141,8 +141,8 @@
         android:id="@+id/btn_registrar_proyectos"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
         android:layout_height="wrap_content"
+        android:background="@color/colorPlata"
         android:onClick="callRegister"
         android:text="Registrar" />
 

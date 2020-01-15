@@ -68,7 +68,7 @@ public class ListaFragment extends Fragment {
         });
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        usuid = sp.getLong("usuid", 0L);
+        usuid = sp.getLong("ID", 0L);
         //usuid = getActivity().getIntent().getExtras().getLong("ID");
         Log.e(TAG, "usuid:" + usuid);
 

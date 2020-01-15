@@ -22,27 +22,7 @@ public interface ApiService {
 
     String API_BASE_URL = "http://10.0.2.2:8088";
 
-
-    @GET("/usuarios")
-    Call<List<Usuario>> getUsuarios();
-
-    @GET("/usuarios/{id}")
-    Call<Usuario> showUsuario(@Path("id") Long id);
-
-    @FormUrlEncoded
-    @POST("/usuarios")
-    Call<Usuario> createUsuario(@Field("dni") String dni,
-                                @Field("nombre") String nombre,
-                                @Field("cargo") String cargo,
-                                @Field("correo") String correo,
-                                @Field("password") String password);
-
-    @FormUrlEncoded
-    @POST("/auth/login")
-    Call<Usuario> login(@Field("correo") String correo,
-                        @Field("password") String password);
-
-
+    //Proyectos
     @GET("/proyectos")
     Call<List<Proyecto>> getProyectos();
 
@@ -58,14 +38,40 @@ public interface ApiService {
                                   @Part("distrito") RequestBody distrito,@Part("provincia") RequestBody provincia,
                                   @Part("departamento")RequestBody departamento,@Part("gerente")RequestBody gerente,
                                   @Part("telefono")RequestBody telefono,
-                                  @Part MultipartBody.Part imagen
+                                  @Part MultipartBody.Part imagen);
 
-    );
+    @GET("/proyectos/{id}")
+    Call<Proyecto> showProyecto(@Path("id") Long id);
+
     @DELETE("/proyectos/{id}")
     Call<String> destroyProyecto(@Path("id") Long id);
 
     @GET("/proyectos/{id}")
-    Call<Proyecto> showProyecto(@Path("id") Long id);
+    Call<Proyecto> showMascotaQR(@Path("id") Long id);
+
+
+    //Login
+    @FormUrlEncoded
+    @POST("/auth/login")
+    Call<Usuario> login(@Field("correo") String correo,
+                        @Field("password") String password);
+    //Usuarios
+    @GET("/usuarios")
+    Call<List<Usuario>> getUsuarios();
+
+    @GET("/usuarios/{id}")
+    Call<Usuario> showUsuario(@Path("id") Long id);
+
+    @FormUrlEncoded
+    @POST("/usuarios")
+    Call<Usuario> createUsuario(@Field("dni") String dni,
+                                @Field("nombre") String nombre,
+                                @Field("cargo") String cargo,
+                                @Field("correo") String correo,
+                                @Field("password") String password);
+
+
+
 
 
 

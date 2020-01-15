@@ -32,7 +32,6 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import pe.bonifacio.redriwebservices.R;
-import pe.bonifacio.redriwebservices.activities.RegisterActivity;
 import pe.bonifacio.redriwebservices.models.Proyecto;
 import pe.bonifacio.redriwebservices.services.ApiService;
 import pe.bonifacio.redriwebservices.services.ApiServiceGenerator;
@@ -43,7 +42,7 @@ import retrofit2.Response;
 public class RegistroProyectoFragment extends Fragment {
 
 
-    private static final String TAG = RegisterActivity.class.getSimpleName();
+    private static final String TAG = RegistroProyectoFragment.class.getSimpleName();
     private static final int REQUEST_CAMERA = 100;
     String CAMERA_PERMISSION = android.Manifest.permission.CAMERA;
 
@@ -57,7 +56,7 @@ public class RegistroProyectoFragment extends Fragment {
 
     private Button tomarFoto,registrarProyecto;
 
-    private Long usuid;
+    private Long id;
 
     public RegistroProyectoFragment() {
         // Required empty public constructor
@@ -204,9 +203,9 @@ public class RegistroProyectoFragment extends Fragment {
             MultipartBody.Part imagenPart = MultipartBody.Part.createFormData("imagen", "photo.jpg", requestFile);
 
             SharedPreferences spa = PreferenceManager.getDefaultSharedPreferences(getContext());
-            usuid = spa.getLong("usuid", 0L);
+            id = spa.getLong("d", 0L);
             //usuid = getActivity().getIntent().getExtras().getLong("ID");
-            Log.e(TAG, "usuid:" + usuid);
+            Log.e(TAG, "id:" + id);
 
             // Paramestros a Part
             RequestBody nombrePart = RequestBody.create(MultipartBody.FORM, nombre);

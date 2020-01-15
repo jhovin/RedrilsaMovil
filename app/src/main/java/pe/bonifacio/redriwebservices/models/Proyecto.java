@@ -8,6 +8,7 @@ public class Proyecto{
     private Long id,usuario_id;
     private String nombre;
     private String cliente,distrito,provincia,departamento,gerente,telefono,imagen;
+
     private List<MaquinaIm> maquinaim = new ArrayList<>();
     private List<MaquinaSup> maquinasup = new ArrayList<>();
 

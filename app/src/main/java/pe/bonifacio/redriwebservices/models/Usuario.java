@@ -11,6 +11,13 @@ public class Usuario {
 
     private List<Proyecto> proyecto=new ArrayList<>();
 
+    public List<Proyecto> getProyecto() {
+        return proyecto;
+    }
+    public void setProyecto(List<Proyecto> proyecto) {
+        this.proyecto = proyecto;
+    }
+
     public Usuario() {
 
     }
@@ -61,14 +68,6 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Proyecto> getProyecto() {
-        return proyecto;
-    }
-
-    public void setProyecto(List<Proyecto> proyecto) {
-        this.proyecto = proyecto;
     }
 
     @Override

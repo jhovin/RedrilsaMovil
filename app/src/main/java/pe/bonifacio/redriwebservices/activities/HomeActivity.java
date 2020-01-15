@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = HomeActivity.class.getSimpleName();
     private DrawerLayout drawerLayout;
-    private Long usuid;
+    private Long id;
     private String usucorreo,usuusu;
 
     @Override
@@ -58,6 +58,10 @@ public class HomeActivity extends AppCompatActivity {
                         showProyectos();
                         Toast.makeText(HomeActivity.this, "Mis proyectos", Toast.LENGTH_SHORT).show();
                         break;
+                    case R.id.nav_qr:
+                        escanearProyectos();
+                        Toast.makeText(HomeActivity.this, "Escanear QR", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.nav_logout:
                         logout();
                         Toast.makeText(HomeActivity.this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
@@ -73,11 +77,12 @@ public class HomeActivity extends AppCompatActivity {
         showTodasProyectos();
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
-        usuid = sp.getLong("usuid", 0L);
+        id = sp.getLong("usuid", 0L);
         usuusu= sp.getString("usuusu", "");
         usucorreo= sp.getString("correo", "");
+
         //usuid = getActivity().getIntent().getExtras().getLong("ID");
-        Log.e(TAG, "usuid:" + usuid);
+        Log.e(TAG, "usuid:" + id);
 
         TextView fullnameText = (TextView) navigationView.getHeaderView(0).findViewById(R.id.txt_nombre_nav);
         fullnameText.setText(usuusu);
@@ -109,7 +114,10 @@ public class HomeActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
     }
     ///////// QR ///////////
-
+    private void escanearProyectos(){
+        Intent intent=new Intent(HomeActivity.this, LeerQRActivity.class);
+        startActivity(intent);
+    }
     /////// Cerrar Sesión//////////
     private void logout(){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
