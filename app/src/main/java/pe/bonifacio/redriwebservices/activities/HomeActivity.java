@@ -58,10 +58,6 @@ public class HomeActivity extends AppCompatActivity {
                         showProyectos();
                         Toast.makeText(HomeActivity.this, "Mis proyectos", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.nav_qr:
-                        escanearProyectos();
-                        Toast.makeText(HomeActivity.this, "Escanear QR", Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.nav_logout:
                         logout();
                         Toast.makeText(HomeActivity.this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
@@ -113,11 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         Fragment fragment = new ListaFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
     }
-    ///////// QR ///////////
-    private void escanearProyectos(){
-        Intent intent=new Intent(HomeActivity.this, LeerQRActivity.class);
-        startActivity(intent);
-    }
+
     /////// Cerrar Sesión//////////
     private void logout(){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);

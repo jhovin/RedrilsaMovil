@@ -3,8 +3,6 @@ package pe.bonifacio.redriwebservices.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +23,6 @@ import java.util.List;
 
 
 import pe.bonifacio.redriwebservices.R;
-import pe.bonifacio.redriwebservices.activities.DetalleProyectoActivity;
 import pe.bonifacio.redriwebservices.activities.SelectorActivity;
 import pe.bonifacio.redriwebservices.models.Proyecto;
 import pe.bonifacio.redriwebservices.services.ApiService;
@@ -147,7 +144,7 @@ public class ProyectosAdapter extends RecyclerView.Adapter<ProyectosAdapter.View
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetalleProyectoActivity.class);
+                Intent intent = new Intent(context, SelectorActivity.class);
                 intent.putExtra("id", pro.getId());
                 context.startActivity(intent);
             }

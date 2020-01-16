@@ -229,7 +229,7 @@ public class RegistroProyectoFragment extends Fragment {
                         Log.d(TAG, "proyecto: " + proyecto);
 
                         Toast.makeText(getContext(), "Registro guardado satisfactoriamente", Toast.LENGTH_SHORT).show();
-                        Fragment fragment = new ListaFragment();
+                        Fragment fragment = new ListaTodasFragment();
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
 
 
