@@ -4,39 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#C2C279"
     android:orientation="vertical"
-    tools:context=".HorometroFrimanActivity">
+    android:background="#7C7C50"
+    android:padding="20dp">
 
 
     <ScrollView
+        android:id="@+id/SV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:padding="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/shape3">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/shape3"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_reloj"
-                android:layout_gravity="center"></ImageView>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGISTRO DE HOROMETRO"
-                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="Registro de Proyecto"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="20dp"
-                />
+                android:textSize="30sp">
+            </TextView>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -44,114 +38,148 @@
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/equipo_input"
+                    android:id="@+id/nombre_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Nombre del Equipo"
+                    android:hint="Nombre del Proyecto"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/fecha_input"
+                    android:id="@+id/cliente_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Fecha"
+                    android:hint="Nombre del Cliente"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
-
-
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/operativo_input"
+                    android:id="@+id/distrito_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Operativo"
+                    android:hint="Nombre del Distrito"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/standby_input"
+                    android:id="@+id/provincia_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Stand By"
+                    android:hint="Nombre de la Provincia"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/mantenimientoprev_input"
+                    android:id="@+id/departamento_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Mantenimiento preventivo"
+                    android:hint="Nombre del Departamento"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/mantenimientocor_input"
+                    android:id="@+id/gerente_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="Mantenimiento correctivo"
+                    android:hint="Nombre del Gerente"
                     android:maxLines="1"
                     android:maxLength="100"/>
 
             </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/telefono_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Ingrese Teléfono"
+                    android:maxLines="1"
+                    android:maxLength="9"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btn_takePicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_camera"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:text="Tomar Foto" />
+
+                <ImageView
+                    android:id="@+id/imagen_preview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_equipo2"/>
+
+            </RelativeLayout>
 
             <Button
-                android:id="@+id/btn_registrar_maquinasup"
+                android:id="@+id/btn_registrar_proyectos"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
-                android:background="@drawable/shape4"
                 android:layout_height="wrap_content"
+                android:background="@drawable/shape4"
                 android:onClick="callRegister"
-                android:layout_marginTop="50dp"
                 android:text="Registrar" />
 
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </View>
+
         </LinearLayout>
 
-
     </ScrollView>
-
-
 
 </LinearLayout>

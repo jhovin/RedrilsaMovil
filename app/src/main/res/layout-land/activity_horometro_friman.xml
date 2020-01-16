@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="15dp"
-            android:layout_marginTop="70dp"
             android:background="@drawable/shape3">
 
             <ImageView
@@ -145,6 +144,10 @@
                 android:onClick="callRegister"
                 android:layout_marginTop="50dp"
                 android:text="Registrar" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
 
 
         </LinearLayout>

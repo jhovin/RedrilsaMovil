@@ -21,5 +21,6 @@
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/colorBlancoTransparente"
         android:src="@android:drawable/ic_menu_add"/>
 </RelativeLayout>

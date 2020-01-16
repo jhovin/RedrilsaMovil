@@ -8,6 +8,10 @@
     android:background="#7C7C50"
     android:padding="20dp">
 
+    <ScrollView
+        android:id="@+id/SV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_marginTop="200dp"
@@ -81,4 +85,6 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>
