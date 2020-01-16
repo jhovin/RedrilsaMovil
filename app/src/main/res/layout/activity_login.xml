@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:src="@drawable/ic_equipo2"
-        android:layout_margin="16dp"/>
+        android:layout_margin="20dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -121,12 +121,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="¿Aún no estás registrado?"
+                android:text="@string/text_subrayado"
                 android:textColor="#000000"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textAlignment="center"
                 android:textSize="18sp" />
-
-
         </LinearLayout>
 
 
@@ -136,7 +135,7 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
-       android:layout_margin="20dp"
+       android:layout_margin="60dp"
        android:gravity="center_horizontal"
        android:weightSum="3">
 

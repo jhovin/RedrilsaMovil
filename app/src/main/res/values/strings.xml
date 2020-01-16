@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">RedriWebServices</string>
+    <string name="app_name">RedrilsaApp</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_subrayado"><u>¿Aún no estás registrado?</u></string>
 </resources>

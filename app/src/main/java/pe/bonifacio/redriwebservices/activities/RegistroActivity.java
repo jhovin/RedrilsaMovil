@@ -61,6 +61,11 @@ public class RegistroActivity extends AppCompatActivity {
             Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(password.length()<6){
+            passwordUsuInput.setError("La contraseña debe tener 6 caracteres como minimo");
+            passwordUsuInput.requestFocus();
+            return;
+        }
 
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
         Call<Usuario> call;

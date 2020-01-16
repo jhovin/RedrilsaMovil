@@ -4,10 +4,22 @@
     android:layout_width="match_parent"
     android:background="#C2C279"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/input_titulo_proyectos"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="PROYECTOS"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="#464646"/>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh_lista_proyectos_todas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/input_titulo_proyectos">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview_lista_proyectos_todas"
             android:padding="16dp"
@@ -21,6 +33,6 @@
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:backgroundTint="@color/colorBlancoTransparente"
+        android:backgroundTint="@color/colorIntroduccion"
         android:src="@android:drawable/ic_menu_add"/>
 </RelativeLayout>

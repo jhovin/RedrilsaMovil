@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import pe.bonifacio.redriwebservices.HorometroFrimanActivity;
 import pe.bonifacio.redriwebservices.R;
 import pe.bonifacio.redriwebservices.activities.HorometroActivity;
 import pe.bonifacio.redriwebservices.models.MaquinaSup;
@@ -57,7 +58,7 @@ public class SuperficieAdapter extends RecyclerView.Adapter<SuperficieAdapter.Vi
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, HorometroActivity.class);
+                Intent intent = new Intent(context, HorometroFrimanActivity.class);
                 intent.putExtra("ID", superficie.getId_sup());
                 context.startActivity(intent);
 
