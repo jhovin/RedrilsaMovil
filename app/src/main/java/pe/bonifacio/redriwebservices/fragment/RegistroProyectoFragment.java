@@ -172,13 +172,13 @@ public class RegistroProyectoFragment extends Fragment {
         }
     }
     public void callRegister(){
-        String nombre = nombreInput.getText().toString().toUpperCase();
-        String cliente=clienteInput.getText().toString().toUpperCase();
-        String distrito=distritoInput.getText().toString().toUpperCase();
-        String provincia=provinciaInput.getText().toString().toUpperCase();
-        String departamento=departamentoInput.getText().toString().toUpperCase();
-        String gerente=gerenteInput.getText().toString().toUpperCase();
-        String telefono=telefonoInput.getText().toString().toUpperCase();
+        String nombre = nombreInput.getText().toString().toUpperCase().trim();
+        String cliente=clienteInput.getText().toString().toUpperCase().trim();
+        String distrito=distritoInput.getText().toString().toUpperCase().trim();
+        String provincia=provinciaInput.getText().toString().toUpperCase().trim();
+        String departamento=departamentoInput.getText().toString().toUpperCase().trim();
+        String gerente=gerenteInput.getText().toString().toUpperCase().trim();
+        String telefono=telefonoInput.getText().toString().toUpperCase().trim();
 
         if (nombre.isEmpty()||cliente.isEmpty()||distrito.isEmpty()||provincia.isEmpty()) {
             Toast.makeText(getContext(), "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();

@@ -14,7 +14,6 @@
         android:id="@+id/iv1"
         android:src="@drawable/remicsa"
         android:layout_width="match_parent"
-        android:onClick="IrPagina"
         android:layout_height="100dp">
 
     </ImageView>

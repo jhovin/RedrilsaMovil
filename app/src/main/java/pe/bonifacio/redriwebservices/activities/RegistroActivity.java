@@ -49,11 +49,11 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void callRegister(){
-        String dni=dniUsuInput.getText().toString();
-        String nombre = nombreUsuInput.getText().toString();
-        String correo = correoUsuInput.getText().toString();
-        String cargo=cargoUsuInput.getText().toString();
-        String password = passwordUsuInput.getText().toString();
+        String dni=dniUsuInput.getText().toString().trim();
+        String nombre = nombreUsuInput.getText().toString().trim();
+        String correo = correoUsuInput.getText().toString().trim();
+        String cargo=cargoUsuInput.getText().toString().trim();
+        String password = passwordUsuInput.getText().toString().trim();
 
 
 

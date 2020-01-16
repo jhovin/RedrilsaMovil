@@ -64,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login(){
 
-        String correo = correoInput.getText().toString();
-        String password = passwordInput.getText().toString();
+        String correo = correoInput.getText().toString().trim();
+        String password = passwordInput.getText().toString().trim();
 
         if(correo.isEmpty()){
             Toast.makeText(this, "Ingrese el correo de se usuario", Toast.LENGTH_SHORT).show();
