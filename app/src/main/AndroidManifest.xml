@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="pe.bonifacio.redriwebservices">
 
-    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android"/>
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -21,9 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.DetalleProyectoActivity"></activity>
-        <activity android:name=".activities.VerDatosQRActivity" />
-        <activity android:name=".activities.LeerQRActivity" />
+        <activity android:name=".activities.SuperficieActivity"></activity>
         <activity android:name=".HorometroFrimanActivity" />
         <activity android:name=".activities.MinaActivity" />
         <activity android:name=".activities.HorometroActivity" />

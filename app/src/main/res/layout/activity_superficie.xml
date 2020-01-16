@@ -5,11 +5,11 @@
     android:background="#C2C279"
     android:layout_height="match_parent">
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swiperefresh_lista_proyectos_todas"
+        android:id="@+id/swiperefresh_lista_maquina_superficie"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_lista_proyectos_todas"
+            android:id="@+id/recyclerview_lista_maquina_superficie"
             android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -21,6 +21,5 @@
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:backgroundTint="@color/colorBlancoTransparente"
         android:src="@android:drawable/ic_menu_add"/>
 </RelativeLayout>

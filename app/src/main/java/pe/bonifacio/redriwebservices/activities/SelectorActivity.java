@@ -19,6 +19,14 @@ public class SelectorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selector);
 
         interiormina=findViewById(R.id.cvMInterior);
+        maquinasuperficie=findViewById(R.id.cvMSuperficie);
+        maquinasuperficie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                superficie();
+            }
+        });
+
         interiormina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +42,8 @@ public class SelectorActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void superficie(){
-        
+        Intent intent=new Intent(SelectorActivity.this,SuperficieActivity.class);
+        startActivity(intent);
     }
 
 

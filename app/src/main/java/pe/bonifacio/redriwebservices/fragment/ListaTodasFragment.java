@@ -46,6 +46,16 @@ public class ListaTodasFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_lista_todas, container, false);
+        floatingActionButton=v.findViewById(R.id.btn_showRegister);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new RegistroProyectoFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
+            }
+        });
+
 
         todosproyectosList = v.findViewById(R.id.recyclerview_lista_proyectos_todas);
         todosproyectosList.setLayoutManager(new LinearLayoutManager(getContext()));

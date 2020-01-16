@@ -78,11 +78,11 @@ public interface ApiService {
     @GET("/maquinas/superficie")
     Call<List<MaquinaSup>> getMaquinasSup();
 
-    @GET("//maquinas/superficie/{id}")
+    @GET("/maquinas/superficie/{id}")
     Call<MaquinaSup> showMaquinasSup(@Path("id") Long id);
 
     @FormUrlEncoded
-    @POST("//maquinas/superficie")
+    @POST("/maquinas/superficie")
     Call<MaquinaSup> createMaquinasSup(@Field("nombre_sup") String nombre_sup,
                                 @Field("observacion") String observacion);
 
@@ -90,11 +90,11 @@ public interface ApiService {
     @GET("/maquinas/mina")
     Call<List<MaquinaIm>> getMaquinasIm();
 
-    @GET("//maquinas/mina/{id}")
+    @GET("/maquinas/mina/{id}")
     Call<MaquinaIm> showMaquinasIm(@Path("id") Long id);
 
     @FormUrlEncoded
-    @POST("//maquinas/mina")
+    @POST("/maquinas/mina")
     Call<MaquinaIm> createMaquinasIm(@Field("nombre_im") String nombre_im,
                                        @Field("observacion") String observacion);
 
