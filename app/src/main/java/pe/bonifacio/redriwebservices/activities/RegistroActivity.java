@@ -52,7 +52,7 @@ public class RegistroActivity extends AppCompatActivity {
         String dni=dniUsuInput.getText().toString().trim();
         String nombre = nombreUsuInput.getText().toString().trim();
         String correo = correoUsuInput.getText().toString().trim();
-        String cargo=cargoUsuInput.getText().toString().trim();
+        String cargo=cargoUsuInput.getText().toString().toUpperCase().trim();
         String password = passwordUsuInput.getText().toString().trim();
 
 
@@ -61,6 +61,12 @@ public class RegistroActivity extends AppCompatActivity {
             Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(dni.length()<8 && dni.length()>12){
+            dniUsuInput.setError("DNI debe tener 8 digitos como minimo");
+            dniUsuInput.requestFocus();
+            return;
+        }
+
         if(password.length()<6){
             passwordUsuInput.setError("La contraseña debe tener 6 caracteres como minimo");
             passwordUsuInput.requestFocus();

@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Registro de Usuario"
                     android:textSize="30dp">
 
@@ -64,7 +64,6 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-
                         android:drawableStart="@drawable/ic_usuario"
                         android:drawablePadding="7dp"
                         android:hint="Ingrese su nombre completo"
@@ -88,7 +87,7 @@
                         android:ems="8"
                         android:hint="Ingrese su DNI"
                         android:inputType="number"
-                        android:maxLength="10"
+                        android:maxLength="12"
                         android:maxLines="1"
                         android:textSize="16sp" />
                 </android.support.design.widget.TextInputLayout>
