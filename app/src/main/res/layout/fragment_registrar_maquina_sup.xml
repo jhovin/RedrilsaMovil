@@ -5,16 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp">
+    android:background="#7C7C50"
+    android:padding="20dp">
 
-    <TextView
+
+    <LinearLayout
+        android:layout_marginTop="200dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRAR MÁQUINA DE SUPERFICIE"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/shape3">
+
+
+
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tornillo">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRAR MÁQUINA DE SUPERFICIE"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,9 +74,11 @@
         android:id="@+id/btn_registrar_maquinasup"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
-        android:background="@color/colorGris"
+        android:background="@drawable/shape4"
         android:layout_height="wrap_content"
         android:onClick="callRegister"
         android:text="Registrar" />
 
+
+    </LinearLayout>
 </LinearLayout>
