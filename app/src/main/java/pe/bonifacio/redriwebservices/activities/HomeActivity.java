@@ -103,7 +103,7 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    ///////// Todas las Proyecyos ///////////
+    ///////// Todos las Proyecyos ///////////
     private void showTodasProyectos(){
         Fragment fragment = new ListaTodasFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content, fragment).addToBackStack("tag").commit();
