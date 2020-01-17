@@ -16,7 +16,6 @@ import java.util.List;
 
 import pe.bonifacio.redriwebservices.HorometroFrimanActivity;
 import pe.bonifacio.redriwebservices.R;
-import pe.bonifacio.redriwebservices.activities.HorometroActivity;
 import pe.bonifacio.redriwebservices.models.MaquinaIm;
 
 

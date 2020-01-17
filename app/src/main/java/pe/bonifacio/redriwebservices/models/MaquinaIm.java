@@ -3,6 +3,7 @@ package pe.bonifacio.redriwebservices.models;
 public class MaquinaIm {
     private Long id_im;
     private String nombre_im;
+    private String fecha_inicio;
     private String placa;
     private Integer serie_motor;
     private Integer lectura_horometro;
@@ -27,6 +28,14 @@ public class MaquinaIm {
 
     public void setNombre_im(String nombre_im) {
         this.nombre_im = nombre_im;
+    }
+
+    public String getFecha_inicio() {
+        return fecha_inicio;
+    }
+
+    public void setFecha_inicio(String fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
     }
 
     public String getPlaca() {
@@ -74,6 +83,7 @@ public class MaquinaIm {
         return "MaquinaIm{" +
                 "id_im=" + id_im +
                 ", nombre_im='" + nombre_im + '\'' +
+                ", fecha_inicio='" + fecha_inicio + '\'' +
                 ", placa='" + placa + '\'' +
                 ", serie_motor=" + serie_motor +
                 ", lectura_horometro=" + lectura_horometro +

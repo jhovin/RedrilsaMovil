@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,9 +62,15 @@ public class RegistroActivity extends AppCompatActivity {
             Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(dni.length()<8 && dni.length()>12){
+
+        if(dni.length()<8){
             dniUsuInput.setError("DNI debe tener 8 digitos como minimo");
             dniUsuInput.requestFocus();
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
+            correoUsuInput.setError("Ingrese un correo electronico correcto ");
+            correoUsuInput.requestFocus();
             return;
         }
 

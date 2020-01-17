@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.SuperficieActivity"></activity>
+        <activity android:name=".activities.MaquinaImActivity"></activity>
+        <activity android:name=".activities.SuperficieActivity" />
         <activity android:name=".HorometroFrimanActivity" />
         <activity android:name=".activities.MinaActivity" />
         <activity android:name=".activities.HorometroActivity" />

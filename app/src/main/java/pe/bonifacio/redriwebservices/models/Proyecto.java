@@ -12,6 +12,21 @@ public class Proyecto{
     private List<MaquinaIm> maquinaim = new ArrayList<>();
     private List<MaquinaSup> maquinasup = new ArrayList<>();
 
+    public Proyecto() {
+    }
+
+    public Proyecto(Long id, Long usuario_id, String nombre, String cliente, String distrito, String provincia, String departamento, String gerente, String telefono, String imagen) {
+        this.id = id;
+        this.usuario_id = usuario_id;
+        this.nombre = nombre;
+        this.cliente = cliente;
+        this.distrito = distrito;
+        this.provincia = provincia;
+        this.departamento = departamento;
+        this.gerente = gerente;
+        this.telefono = telefono;
+        this.imagen = imagen;
+    }
 
     public Long getId() {
         return id;
