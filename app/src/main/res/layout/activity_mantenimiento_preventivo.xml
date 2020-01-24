@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:background="#C2C279"
     android:orientation="vertical"
-    tools:context=".activities.MantenimientoCorrectivoActivity">
+    tools:context=".activities.MantenimientoPreventivoActivity">
 
 
     <ScrollView
@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
             android:background="@drawable/shape3"
             android:orientation="vertical"
             android:padding="15dp">
@@ -25,15 +26,14 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_herramientas_para_reparar">
-            </ImageView>
+                android:src="@drawable/ic_herramientas_para_reparar"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="MANTENIMIENTO CORRECTIVO"
+                android:text="MANTENIMIENTO PREVENTIVO"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_sistema"
                     android:drawablePadding="7dp"
-                    android:hint="Sistema / Parte"
+                    android:hint="Equipo"
                     android:inputType="text"
                     android:maxLength="100"
                     android:maxLines="1" />
@@ -67,7 +67,6 @@
                     android:drawableStart="@drawable/ic_hora_y_fecha_mantenimiento"
                     android:drawablePadding="7dp"
                     android:hint="Hora dato"
-                    android:cursorVisible="false"
                     android:inputType="number"
                     android:maxLength="100"
                     android:maxLines="1" />
@@ -90,6 +89,7 @@
                     android:inputType="textNoSuggestions|textCapCharacters"
                     android:maxLength="100"
                     android:maxLines="1" />
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -104,7 +104,6 @@
                     android:drawableStart="@drawable/ic_calendario"
                     android:drawablePadding="7dp"
                     android:hint="Fecha"
-                    android:cursorVisible="false"
                     android:inputType="text"
                     android:maxLength="100"
                     android:maxLines="1" />
@@ -146,6 +145,5 @@
 
 
     </ScrollView>
-
 
 </LinearLayout>

@@ -21,10 +21,6 @@
         android:padding="20dp"
         android:background="@drawable/shape3">
 
-
-
-
-
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -82,8 +78,6 @@
         android:layout_height="wrap_content"
         android:onClick="callRegister"
         android:text="Registrar" />
-
-
     </LinearLayout>
 
     </ScrollView>

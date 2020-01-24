@@ -1,25 +1,23 @@
 package pe.bonifacio.redriwebservices.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import pe.bonifacio.redriwebservices.R;
 import pe.bonifacio.redriwebservices.adapters.MinaAdapter;
-import pe.bonifacio.redriwebservices.fragment.RegistroProyectoFragment;
 import pe.bonifacio.redriwebservices.models.MaquinaIm;
 import pe.bonifacio.redriwebservices.services.ApiService;
 import pe.bonifacio.redriwebservices.services.ApiServiceGenerator;
@@ -29,6 +27,13 @@ import retrofit2.Response;
 
 public class MinaActivity extends AppCompatActivity {
 
+
+    /* Codigo para el filtro de Busqueda*/
+
+    private EditText busquedatext;
+
+    /* Codigo para el filtro de Busqueda*/
+
     private static final String TAG = MinaActivity.class.getSimpleName();
 
     private RecyclerView minaList;
@@ -37,6 +42,11 @@ public class MinaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mina);
+
+        /*Código para el filtro de busqueda*/
+        busquedatext=findViewById(R.id.edittext);
+
+        /*Código para el filtro de busqueda*/
 
         floatingActionButton=findViewById(R.id.btn_showRegister);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -49,14 +59,10 @@ public class MinaActivity extends AppCompatActivity {
 
         minaList=findViewById(R.id.recyclerview_lista_maquina_mina);
         minaList.setLayoutManager(new LinearLayoutManager(this));
-
         minaList.setAdapter(new MinaAdapter());
-
         initialize();
-
-
-
     }
+
     public void initialize(){
 
         ApiService service= ApiServiceGenerator.createService(ApiService.class);
@@ -67,7 +73,6 @@ public class MinaActivity extends AppCompatActivity {
 
                 try{
                     if(response.isSuccessful()){
-
                         List<MaquinaIm> mina =response.body();
                         Log.d(TAG,"mina: "+mina);
                         MinaAdapter adapter=(MinaAdapter)minaList.getAdapter();
@@ -79,7 +84,6 @@ public class MinaActivity extends AppCompatActivity {
                     Log.e(TAG,"onThrowable: "+t.getMessage(),t);
                     Toast.makeText(MinaActivity.this,t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
             }
             @Override
             public void onFailure(Call<List<MaquinaIm>> call, Throwable t) {
@@ -88,7 +92,6 @@ public class MinaActivity extends AppCompatActivity {
             }
         });
     }
-
 }
 
 

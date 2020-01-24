@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="MANTENIMIENTO PREVENTIVO"
+                android:text="MANTENIMIENTO CORRECTIVO"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -68,6 +68,7 @@
                     android:drawablePadding="7dp"
                     android:hint="Hora dato"
                     android:inputType="number"
+                    android:cursorVisible="false"
                     android:maxLength="100"
                     android:maxLines="1" />
 
@@ -86,9 +87,8 @@
                     android:drawablePadding="7dp"
                     android:ems="10"
                     android:hint="Descripción"
-                    android:inputType="textNoSuggestions|textCapCharacters"
-                    android:maxLength="100"
-                    android:maxLines="1" />
+                    android:maxLength="300"
+                    android:maxLines="2" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -104,7 +104,8 @@
                     android:drawableStart="@drawable/ic_calendario"
                     android:drawablePadding="7dp"
                     android:hint="Fecha"
-                    android:inputType="text"
+                    android:cursorVisible="false"
+                    android:inputType="date"
                     android:maxLength="100"
                     android:maxLines="1" />
 
@@ -137,14 +138,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/shape4"
-                android:onClick="callRegister"
-                android:text="Registrar" />
+                android:onClick="RegistrarMantenimiento"
+                android:text="Registrar Mantenimiento" />
 
 
         </LinearLayout>
 
 
     </ScrollView>
-
 
 </LinearLayout>
