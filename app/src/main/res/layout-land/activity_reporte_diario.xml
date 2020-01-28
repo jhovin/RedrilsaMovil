@@ -67,6 +67,7 @@
                     android:drawableStart="@drawable/ic_alinear_a_la_izquierda"
                     android:drawablePadding="7dp"
                     android:ems="10"
+                    android:gravity="top"
                     android:hint="Descripción"
                     android:maxLength="300"
                     android:maxLines="2" />
